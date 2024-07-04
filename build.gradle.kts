@@ -11,6 +11,8 @@ repositories {
 }
 
 dependencies {
+    implementation("com.michael-bull.kotlin-result:kotlin-result:2.0.0")
+
     testImplementation(kotlin("test"))
 }
 
