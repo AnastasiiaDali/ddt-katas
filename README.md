@@ -1,7 +1,5 @@
 # Domain-Driven Tests Kata
 
-This is a Kata that aims to familiarize people with the concept of Domain-Driven Tests. If you don't know anything about DDTs, refer to [this talk](https://www.youtube.com/watch?v=Fk4rCn4YLLU) or [this document.](https://docs.google.com/document/d/10WuPeP-Ek2UKplnZg9zVp4UxGSejOfMnwPh-5bwxUVU/edit#heading=h.3gx79w623ped)
-
 To summarize DDTs, its focus is to test the domain logic, leaving implementation details to the last possible moment. They match perfectly with the steel thread/iterative approach, where we anticipate integration by using fakes/dummies, focusing only in the domain logic.
 
 ## Scenarios:
