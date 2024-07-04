@@ -9,7 +9,9 @@ abstract class ManagerActor {
 
 class InMemoryManagerActor(private val hub: ManagerAppHub): ManagerActor() {
     override fun canRegisterProductArrival(products: List<Product>) {
-        TODO("Not yet implemented")
+        products.forEach { product ->
+            hub.register(product)
+        }
     }
 
 }
