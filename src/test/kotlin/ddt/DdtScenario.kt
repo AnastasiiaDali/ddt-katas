@@ -17,6 +17,7 @@ fun newTestScenario(config: TestScenarioConfig): DdtScenario = when (config) {
         InMemoryScenario (
             managerHub = ManagerAppHub(
                 storage = InMemoryStorageRepository,
+                userStorage = InMemoryUserManagerRepository()
             ),
         )
     }

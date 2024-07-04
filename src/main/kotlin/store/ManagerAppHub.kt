@@ -1,10 +1,23 @@
 package store
 
-import com.github.michaelbull.result.Ok
-import com.github.michaelbull.result.Result
 
 class ManagerAppHub(
     private val storage: StorageRepository,
+    private val userStorage: UserManagerRepository
 ) {
-    fun register(product: Product): Result<Unit, ErrorCode> =  Ok(storage.save(product))
+    fun register(product: Product): Result<Unit> {
+        return if (userStorage.isUserAuthenticated() is AuthenticatedUser) {
+            Result.success(storage.save(product))
+        } else {
+            Result.failure(ErrorCode.NotAuthenticated)
+        }
+    }
+
+    fun logIn(password: String): Result<Unit> {
+        return if (password == "someVerySecureCorrectPassword") {
+            Result.success(userStorage.save(AuthenticatedUser))
+        } else {
+            Result.failure(ErrorCode.NotAuthenticated)
+        }
+    }
 }
